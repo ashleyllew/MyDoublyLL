@@ -3,6 +3,22 @@ public class MyDoublyLL {
 	public int count;
 	public boolean error;
 	
+	public static void main(String[] args) {
+		MyDoublyLL dll = new MyDoublyLL();
+		Node root = new Node();
+		root.setData("tree");
+		Node node1 = new Node();
+		node1.setData("of");
+		Node node2 = new Node();
+		node2.setData("peaches");
+		
+		dll.addRoot(root);
+		dll.add(root, node1);
+		dll.add(root, node2);
+		
+		dll.traverse(root);
+	}
+	
 	public MyDoublyLL() {
 	}
 	
@@ -103,6 +119,15 @@ public class MyDoublyLL {
 			return true;
 		}
 		return false;
+	}
+	
+	public void traverse(Node root) {
+		Node currNode = root;
+		while (currNode.getNextNode() != root) {
+			System.out.println("node: " + currNode.getData());
+			currNode = currNode.getNextNode();
+		}
+		System.out.println("last node: " + currNode.getData());
 	}
 	
 	public boolean error() {
