@@ -197,9 +197,4 @@ public class TestingDoublyLL {
 		count = list.length();
 		assertEquals(count, 0);
 	}	
-	
-	@Test
-	public void traverseList() {
-		
-	}
 }
